@@ -16,7 +16,7 @@ const GoalInput = props => {
         onChangeText={handleInputChange}
         value={enteredGoal}
       />
-      <Button title="ADD" onPress={handleSubmitGoal} />
+      <Button title="ADD" onPress={() => handleSubmitGoal(enteredGoal)} />
     </View>
   );
 };

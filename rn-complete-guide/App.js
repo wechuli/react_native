@@ -16,10 +16,10 @@ export default function App() {
 
   const [courseGoals, setCourseGoals] = useState([]);
 
-  const handleSubmitGoal = () => {
+  const handleSubmitGoal = (newGoal) => {
     setCourseGoals(currentGoals => [
       ...currentGoals,
-      { id: uuid(), value: enteredGoal }
+      { id: uuid(), value: newGoal }
     ]);
   };
 
