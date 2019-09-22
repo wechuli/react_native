@@ -19,10 +19,10 @@ export default function App() {
   const handleSubmitGoal = () => {
     setCourseGoals(currentGoals => [
       ...currentGoals,
-      { key: uuid(), value: enteredGoal }
+      { id: uuid(), value: enteredGoal }
     ]);
   };
-  console.log(uuid());
+
   return (
     <View style={styles.screen}>
       <View style={styles.inputContainer}>
@@ -37,6 +37,7 @@ export default function App() {
 
       <View>
         <FlatList
+        keyExtractor={(item,index)=>item.id}
           data={courseGoals}
           renderItem={itemData => (
             <View style={styles.listItem}>
