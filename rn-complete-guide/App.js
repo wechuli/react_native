@@ -13,11 +13,9 @@ import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
 export default function App() {
-  const [enteredGoal, setEnteredGoal] = useState("");
+
   const [courseGoals, setCourseGoals] = useState([]);
-  const handleInputChange = enteredText => {
-    setEnteredGoal(enteredText);
-  };
+
   const handleSubmitGoal = () => {
     setCourseGoals(currentGoals => [
       ...currentGoals,
@@ -27,9 +25,7 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      <GoalInput
-        enteredGoal={enteredGoal}
-        handleInputChange={handleInputChange}
+      <GoalInput    
         handleSubmitGoal={handleSubmitGoal}
       />
 

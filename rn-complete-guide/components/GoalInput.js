@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
 
 const GoalInput = props => {
-  const { handleInputChange, handleSubmitGoal, enteredGoal } = props;
+  const [enteredGoal, setEnteredGoal] = useState("");
+  const { handleSubmitGoal } = props;
+
+  const handleInputChange = enteredText => {
+    setEnteredGoal(enteredText);
+  };
   return (
     <View style={styles.inputContainer}>
       <TextInput
@@ -15,7 +20,7 @@ const GoalInput = props => {
     </View>
   );
 };
-const styles = {
+const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -27,6 +32,6 @@ const styles = {
     borderWidth: 1,
     padding: 10
   }
-};
+});
 
 export default GoalInput;
