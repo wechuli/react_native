@@ -13,6 +13,7 @@ export default function App() {
       ...currentGoals,
       { id: uuid(), value: newGoal }
     ]);
+    setIsAddMode(false);
   };
   const removeGoalHandler = goalId => {
     setCourseGoals(currentGoals => {
