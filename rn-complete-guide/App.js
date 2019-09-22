@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import uuid from "uuid/v4";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Button } from "react-native";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
