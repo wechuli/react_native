@@ -19,7 +19,7 @@ export default function App() {
   const handleSubmitGoal = () => {
     setCourseGoals(currentGoals => [
       ...currentGoals,
-      { id: uuid(), value: enteredGoal }
+      { ids: uuid(), value: enteredGoal }
     ]);
   };
 
