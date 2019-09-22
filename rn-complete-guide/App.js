@@ -13,10 +13,9 @@ import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
 export default function App() {
-
   const [courseGoals, setCourseGoals] = useState([]);
 
-  const handleSubmitGoal = (newGoal) => {
+  const handleSubmitGoal = newGoal => {
     setCourseGoals(currentGoals => [
       ...currentGoals,
       { id: uuid(), value: newGoal }
@@ -25,15 +24,18 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      <GoalInput    
-        handleSubmitGoal={handleSubmitGoal}
-      />
+      <GoalInput handleSubmitGoal={handleSubmitGoal} />
 
       <View>
         <FlatList
           keyExtractor={(item, index) => item.id}
           data={courseGoals}
-          renderItem={itemData => <GoalItem title={itemData.item.value} />}
+          renderItem={itemData => (
+            <GoalItem
+              onDelete={() => console.log("On press delete ")}
+              title={itemData.item.value}
+            />
+          )}
         />
       </View>
     </View>
