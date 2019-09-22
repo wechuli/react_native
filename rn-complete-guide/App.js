@@ -20,11 +20,14 @@ export default function App() {
       return currentGoals.filter(goal => goal.id !== goalId);
     });
   };
+  const cancelGoalAdditionHandler = () => {
+    setIsAddMode(false);
+  };
 
   return (
     <View style={styles.screen}>
       <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
-      <GoalInput visible={isAddMode} handleSubmitGoal={handleSubmitGoal} />
+      <GoalInput visible={isAddMode} handleSubmitGoal={handleSubmitGoal} cancelGoal={cancelGoalAdditionHandler}/>
 
       <View>
         <FlatList
