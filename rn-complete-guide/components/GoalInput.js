@@ -3,13 +3,13 @@ import { View, TextInput, Button, StyleSheet, Modal } from "react-native";
 
 const GoalInput = props => {
   const [enteredGoal, setEnteredGoal] = useState("");
-  const { handleSubmitGoal } = props;
+  const { handleSubmitGoal, visible } = props;
 
   const handleInputChange = enteredText => {
     setEnteredGoal(enteredText);
   };
   return (
-    <Modal>
+    <Modal visible={visible} animationType="slide">
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Course goal"
@@ -24,9 +24,10 @@ const GoalInput = props => {
 };
 const styles = StyleSheet.create({
   inputContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1
   },
   input: {
     width: "80%",
