@@ -51,10 +51,10 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    width: "40%"
+    width: "60%"
   },
   button: {
-    width: "40%"
+    width: "60%"
   }
 });
 
