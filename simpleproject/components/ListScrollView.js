@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, FlatList } from "react-native";
 
 const ListScrollView = () => {
   const [people, setPeople] = useState([
@@ -13,13 +13,17 @@ const ListScrollView = () => {
   ]);
   return (
     <View style={styles.container}>
-      <ScrollView>
+      {/* <ScrollView>
         {people.map(person => (
           <View key={person.key}>
             <Text style={styles.item}>{person.name}</Text>
           </View>
         ))}
-      </ScrollView>
+      </ScrollView> */}
+      <FlatList
+        data={people}
+        renderItem={({ item }) => <Text style={styles.item}>{item.name}</Text>}
+      />
     </View>
   );
 };
